@@ -16,5 +16,5 @@ include 'api'
 include 'services:webservice'
 */
 
-include 'java-7-new-features-cook-book'
 rootProject.name = 'research-java7'
+include 'java-7-new-features-cook-book'
