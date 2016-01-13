@@ -9,6 +9,7 @@ public class ExFileSystemPath {
 //        Path path  = FileSystems.getDefault().getPath("/tmp/docs/status.txt");
         Path path = Paths.get("/tmp", "docs", "status.txt");
         System.out.println();
+        System.out.printf("toAbsolutePath : %s%n", path.toAbsolutePath());
         System.out.printf("toString: %s%n", path.toString());
         System.out.printf("getFileName : %s%n", path.getFileName());
         System.out.printf("getRoot: %s%n", path.getRoot());
