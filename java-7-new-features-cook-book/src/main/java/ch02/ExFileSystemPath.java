@@ -2,11 +2,12 @@ package ch02;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class ExFileSystemPath {
     public static void main(String[] args) {
-        Path path  = FileSystems.getDefault().getPath("/tmp/docs/status.txt");
-
+//        Path path  = FileSystems.getDefault().getPath("/tmp/docs/status.txt");
+        Path path = Paths.get("/tmp", "docs", "status.txt");
         System.out.println();
         System.out.printf("toString: %s%n", path.toString());
         System.out.printf("getFileName : %s%n", path.getFileName());
