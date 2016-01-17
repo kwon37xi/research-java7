@@ -9,7 +9,7 @@ import java.nio.file.attribute.FileOwnerAttributeView;
 import java.nio.file.attribute.UserPrincipal;
 import java.nio.file.attribute.UserPrincipalLookupService;
 
-public class OwnerAttributes {
+public class UsageOwnerAttributes {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("/tmp/docs/users.txt");
 

@@ -9,7 +9,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.util.Calendar;
 
-public class TimeAttributes {
+public class UsageTimeAttributes {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("/tmp/docs/users.txt");
         BasicFileAttributeView view = Files.getFileAttributeView(path, BasicFileAttributeView.class);
