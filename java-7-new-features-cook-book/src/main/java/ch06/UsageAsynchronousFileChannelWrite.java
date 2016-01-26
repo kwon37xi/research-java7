@@ -8,7 +8,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
-public class UsageAsynchronousFileChannel {
+public class UsageAsynchronousFileChannelWrite {
     public static void main(String[] args) throws Exception {
         try (AsynchronousFileChannel fileChannel = AsynchronousFileChannel.open(Paths.get("/tmp/docs/asynchronous.txt"),
                 StandardOpenOption.READ, StandardOpenOption.WRITE, StandardOpenOption.CREATE)) {
