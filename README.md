@@ -1,1 +1,1 @@
-* [Java 7 New Features cook book](tree/master/java-7-new-features-cook-book)
+* [Java 7 New Features cook book](https://github.com/kwon37xi/research-java7/tree/master/java-7-new-features-cook-book)
