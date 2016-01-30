@@ -13,18 +13,20 @@ public class UsageProcessBuilderRedirect {
         File errors = new File("/tmp/ErrorLog.txt");
 
         ProcessBuilder pb = new ProcessBuilder("/bin/sh");
-        System.out.println(pb.redirectInput());
-        System.out.println(pb.redirectOutput());
-        System.out.println(pb.redirectError());
+        System.out.println(pb.redirectInput()); // default Redirect.PIPE
+        System.out.println(pb.redirectOutput()); // default Redirect.PIPE
+        System.out.println(pb.redirectError()); // default Redirect.PIPE
 
         pb.redirectInput(commands);
         pb.redirectOutput(output);
-        pb.redirectError(errors);
+        pb.redirectError(ProcessBuilder.Redirect.appendTo(errors));
 
         System.out.println(pb.redirectInput());
         System.out.println(pb.redirectOutput());
         System.out.println(pb.redirectError());
 
         pb.start();
+
+        // bp.inheritIO() 모든 리다이렉트를  Redirect.INHERIT 으로 지정하는것과 같다.
     }
 }
