@@ -3,13 +3,14 @@ package ch02_recursion_backtracking;
 /**
  * n 비트의 모든 문자열을 생성하라. A[0..n-1]은 크기 n인 배열이라고 가정하라.
  * -- 책이 제대로 안돼 있음. <a href="http://www.studyalgorithms.com/theory/generate-all-strings-of-n-bits-assume-a0-n-1-be-an-array-of-size-n/">Generate All Strings of ‘n’ bits. Assume A[0….n-1] be an array of size n.</a> 참조.
+ * <a href="https://shiv4289.wordpress.com/tag/backtracking/">Backtracking-I (Primer)</a> 참조.
  */
 public class BackTracking02_binary {
 
     public static char[] arr = new char[4];
 
     public static void binary(int n) {
-        if (n < 1) {
+        if (n < 1) { // 최 좌측 비트에 대해 끝나면 출력.
             for (int i = 0; i < 4; i++) {
                 System.out.print(arr[i]);
             }
