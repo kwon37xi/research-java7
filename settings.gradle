@@ -18,3 +18,4 @@ include 'services:webservice'
 
 rootProject.name = 'research-java7'
 include 'java-7-new-features-cook-book'
+include 'datastructure-and-algorithms-made-easy-for-java'
