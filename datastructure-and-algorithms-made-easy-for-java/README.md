@@ -1,1 +1,1 @@
-* [다양한 예제로 학습하는 데이터 구조와 알고리즘 for Java](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=36243861)
+* [다양한 예제로 학습하는 데이터 구조와 알고리즘 for Java](http://www.insightbook.co.kr/books/programming-insight/%EB%8B%A4%EC%96%91%ED%95%9C-%EC%98%88%EC%A0%9C%EB%A1%9C-%ED%95%99%EC%8A%B5%ED%95%98%EB%8A%94-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-for-java)
