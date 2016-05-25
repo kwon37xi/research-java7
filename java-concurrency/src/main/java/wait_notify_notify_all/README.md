@@ -1,6 +1,5 @@
 * [How to use wait, notify and notifyAll in Java - Producer Consumer Example](http://javarevisited.blogspot.kr/2015/07/how-to-use-wait-notify-and-notifyall-in.html) : 기초 정리가 잘 돼 있음.
 * [Inter Thread Communication in Java using Wait Notify Example](http://javarevisited.blogspot.kr/2013/12/inter-thread-communication-in-java-wait-notify-example.html)
-* [Why wait notify and notifyAll called from synchronized block or method in Java](http://javarevisited.blogspot.kr/2011/05/wait-notify-and-notifyall-in-java.html)
 * [Difference between notify and notifyAll in Java - When and How to use](http://javarevisited.blogspot.kr/2012/10/difference-between-notify-and-notifyall-java-example.html)
 * [Why wait, notify and notifyAll is defined in Object Class and not on Thread class in Java](http://javarevisited.blogspot.kr/2012/02/why-wait-notify-and-notifyall-is.html)
 
@@ -19,7 +18,7 @@
 ## notify/notifyAll 차이점
 * `notify`는 기다리는(waiting) 쓰레드(monitor라고 부름) 딱 한 개에게만 알림을 준다. 뭐가 될지는 알 수 없다.
 * `notifyAll` 은 모든 쓰레드에게 알림을 준다.
-* 가급적 **`notifyAll`**을 호출하라.
+* 가급적 **`notifyAll`**을 호출하라. 명백히 하나의 쓰레드가 요청을 소비하는게 확실 할 때만 `notify`를 호출한다.
 
 ## Producer/Consumer pattern
 ```java
@@ -44,4 +43,11 @@ synchronized (obj) {
 ```
 
 ## wait, notify 를 왜 synchronized에서 불러야 하나?
+* [Why wait notify and notifyAll called from synchronized block or method in Java](http://javarevisited.blogspot.kr/2011/05/wait-notify-and-notifyall-in-java.html)
 * 그러지 않으면 `IllegalMonitorStateException` 발생
+* 동기화를 하지 않으면
+* producer가`wait` 상태에 빠지기 직전에 consumer가 `notify` 하는 상태가 될 수 있고
+* 이 상황에서 producer가 `wait`하게 되면 consumer는 이미 `notify`를 했기 때문에 더이상 다시 `notify`안 함.
+* 데드락 상태에 빠짐.
+* 따라서 먼저 대상 공유객체를 `synchronized`에서 lock을 획득해야만 wait/notify를 호출 할 수 있도록 한다.
+* 맞나??
