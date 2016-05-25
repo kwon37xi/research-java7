@@ -1,4 +1,4 @@
-package wait_notify_notify_all;
+package wait_notify_notify_all.interthreadcommunication;
 
 import java.util.Queue;
 
