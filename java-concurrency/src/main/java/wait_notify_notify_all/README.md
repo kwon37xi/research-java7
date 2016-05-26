@@ -17,7 +17,8 @@
 
 ## notify/notifyAll 차이점
 * `notify`는 기다리는(waiting) 쓰레드(monitor라고 부름) 딱 한 개에게만 알림을 준다. 뭐가 될지는 알 수 없다.
-* `notifyAll` 은 모든 쓰레드에게 알림을 준다.
+* `notifyAll` 은 동일 모니터/Lock 을 waiting 하고 있는 모든 쓰레드에게 알림을 준다. 그러나 깨어나자 마자 Lock을 잡으려고 경쟁하며 Lock을 잡은
+쓰레드만이 나머지 코드를 실행하고, 다른 쓰레드들은 조건 체크 loop에 의해 다시 `wait` 상태로 들어가야한다.
 * 가급적 **`notifyAll`**을 호출하라. 명백히 하나의 쓰레드가 요청을 소비하는게 확실 할 때만 `notify`를 호출한다.
 
 ## Producer/Consumer pattern
