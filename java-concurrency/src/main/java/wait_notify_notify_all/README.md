@@ -2,6 +2,7 @@
 * [Inter Thread Communication in Java using Wait Notify Example](http://javarevisited.blogspot.kr/2013/12/inter-thread-communication-in-java-wait-notify-example.html)
 * [Difference between notify and notifyAll in Java - When and How to use](http://javarevisited.blogspot.kr/2012/10/difference-between-notify-and-notifyall-java-example.html)
 * [Why wait, notify and notifyAll is defined in Object Class and not on Thread class in Java](http://javarevisited.blogspot.kr/2012/02/why-wait-notify-and-notifyall-is.html)
+* [Difference between Wait and Sleep, Yield in Java](http://javarevisited.blogspot.kr/2011/12/difference-between-wait-sleep-yield.html)
 
 ## wait, notify 용도
 쓰레드간의 커뮤니케이션에 사용한다. 하나의 쓰레드에서 기다리는 동안(`wait`), 다른 쓰레드가 공유 객체에 값을 넣고 `notify`를 콜해서 첫번째 쓰레드에 공유값을 체크해보라고 통지를 하는 방식.
