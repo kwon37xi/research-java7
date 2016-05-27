@@ -2,7 +2,6 @@
 * [Inter Thread Communication in Java using Wait Notify Example](http://javarevisited.blogspot.kr/2013/12/inter-thread-communication-in-java-wait-notify-example.html)
 * [Difference between notify and notifyAll in Java - When and How to use](http://javarevisited.blogspot.kr/2012/10/difference-between-notify-and-notifyall-java-example.html)
 * [Why wait, notify and notifyAll is defined in Object Class and not on Thread class in Java](http://javarevisited.blogspot.kr/2012/02/why-wait-notify-and-notifyall-is.html)
-* [Difference between Wait and Sleep, Yield in Java](http://javarevisited.blogspot.kr/2011/12/difference-between-wait-sleep-yield.html)
 
 ## wait, notify 용도
 쓰레드간의 커뮤니케이션에 사용한다. 하나의 쓰레드에서 기다리는 동안(`wait`), 다른 쓰레드가 공유 객체에 값을 넣고 `notify`를 콜해서 첫번째 쓰레드에 공유값을 체크해보라고 통지를 하는 방식.
@@ -53,3 +52,15 @@ synchronized (obj) {
 * 데드락 상태에 빠짐.
 * 따라서 먼저 대상 공유객체를 `synchronized`에서 lock을 획득해야만 wait/notify를 호출 할 수 있도록 한다.
 * 맞나??
+
+## wait, sleep, yield의 차이점
+* [Difference between Wait and Sleep, Yield in Java](http://javarevisited.blogspot.kr/2011/12/difference-between-wait-sleep-yield.html)
+* `sleep`, `yield`는 Thread 클래스에, `wait`은 Object 에 존재하는 메소드
+* `wait`은 쓰레드간 통신용도, `sleep`은 쓰레드 멈충 용도. `synchronized` 블럭에서 호출해야한다.
+* 쓰레드에서 `wait`이 호출되면 잡고있던 monitor 혹은 lock을 해제한다.
+* `sleep`은 lock을 해제하지 않고 기다리기만 한다. `synchronized` 블럭에서 호출할 필요가 없다.
+* `yield`는 쓰레드가 잡고있는 CPU를 해제하고 다른 쓰레드에게 CPU를 할당할 수 있게 해준다.
+  하지만 어느 쓰레드가 CPU를 받게될지는 알 수 없다.
+  쓰레드 스케줄러가 알아서 하며 `yield`를 호출한 쓰레드가 다시 할당받을 가능성도 있다.
+  따라서 `yield`에 의존하여 로직을 처리하는 코드를 작성하면 안된다.
+* `sleep`과 `yield`는 항상 해당 메소드를 호출한 쓰레드에 적용한다. Thread 객체에 대고 실행한다고 해서 해당 객체의 쓰레드에 적용되는 것이 아니다. static 이므로.
