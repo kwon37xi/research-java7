@@ -36,5 +36,5 @@
 * Semaphore.release()` 허가권을 반환한다.
 * blocking/unblocking 방식 모두 제공.
 * *Binary Semahpore* : 허가권이 1개인 Semaphore. 상호 배제 접근(mutual exclusive access) 구현(한번에 동시 접근 불가).
-
-
+* `tryAcquire()` : 요청시점에 존재하는 허가권 요청. 허가권 없으면 바로 false 리턴.
+* `acquireUninterruptibly()` : blocking call. 다른 쓰레드가 interrupt를 걸어도 무시하고 허가권이 생길때까지 혹은 제한 시간까지 계속 `wait`.
