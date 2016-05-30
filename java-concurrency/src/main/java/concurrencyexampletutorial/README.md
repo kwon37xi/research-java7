@@ -23,3 +23,18 @@
 * 일반적으로는 `await()` 호출은 쓰레드가 barrier에서 기다리고 있다고 알리는 행위이다.
 * `await()`은 Blocking 호출이지만 다른 쓰레드에 의해 interrupted 될 수 있다.
 * `reset()` 메소드를 호출하여 객체를 초기화하면 재사용 가능하다.
+
+## Counting Semaphore
+* Counting [Semaphore](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Semaphore.html) CountDownLatch, CyclicBarrier, Exchanger 같은
+  동기화 도우미이다.
+* 공유 리소스에 접근하는데 있어 허용 숫자를 제한하고 관리하는 역할을 한다.
+* 현재 쓰레드는 허가권을 얻어야한다.
+* 만약 허가권이 다른 쓰레드에 의해 모두 소진된 상태라면 다른 쓰레드에서 허가권을 놔줄 때까지 기다린다(`wait`).
+* 이는 Producer/Consumer 패턴이나 Thread Pool, DB Connection Pool 구현하는데 유용하다.
+* [Semaphore](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Semaphore.html) 는 허가권 갯수로 초기화된다.
+* `Semaphore.acquire()` : 허가권이 생길 때 까지 `wait`.
+* Semaphore.release()` 허가권을 반환한다.
+* blocking/unblocking 방식 모두 제공.
+* *Binary Semahpore* : 허가권이 1개인 Semaphore. 상호 배제 접근(mutual exclusive access) 구현(한번에 동시 접근 불가).
+
+
