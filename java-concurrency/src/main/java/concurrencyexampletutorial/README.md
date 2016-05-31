@@ -38,3 +38,10 @@
 * *Binary Semahpore* : 허가권이 1개인 Semaphore. 상호 배제 접근(mutual exclusive access) 구현(한번에 동시 접근 불가).
 * `tryAcquire()` : 요청시점에 존재하는 허가권 요청. 허가권 없으면 바로 false 리턴.
 * `acquireUninterruptibly()` : blocking call. 다른 쓰레드가 interrupt를 걸어도 무시하고 허가권이 생길때까지 혹은 제한 시간까지 계속 `wait`.
+
+## BlockingQueue 를 통한 Producer/Consumer
+* [BlockingQueue](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/BlockingQueue.html)를 이용하면 `wait/notify`없이
+    더욱 간편하게 producer/consumer 구현이 가능하다.
+* [BlockingQueue의 종류와 용법](http://egloos.zum.com/oniondev/v/558949)
+* `BlockingQueue.put()` 은 Queue가 꽉차있으면 block 된다.
+* `BlockingQueue.take()`는 Queue가 비어있으면 block 된다.
